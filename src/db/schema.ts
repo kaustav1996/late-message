@@ -13,8 +13,10 @@ import {
   uuid,
 } from "drizzle-orm/pg-core";
 
-const createdAt = () => timestamp("created_at", { withTimezone: true }).notNull().defaultNow();
-const ts = (name: string) => timestamp(name, { withTimezone: true });
+// Millisecond precision, matching JavaScript dates, so rows can be compared
+// exactly against values read back from them.
+const ts = (name: string) => timestamp(name, { withTimezone: true, precision: 3 });
+const createdAt = () => ts("created_at").notNull().defaultNow();
 
 export const users = pgTable(
   "users",
@@ -223,6 +225,7 @@ export const payments = pgTable(
     amount: integer("amount").notNull(), // smallest currency unit
     currency: text("currency").notNull(),
     raw: jsonb("raw"),
+    refundedAt: ts("refunded_at"),
     createdAt: createdAt(),
   },
   (t) => [index("payments_user_idx").on(t.userId)],

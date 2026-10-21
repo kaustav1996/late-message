@@ -19,7 +19,7 @@ function emailHtml(paragraphs: string[], action?: { label: string; href: string 
   return `<!doctype html><html><body style="margin:0;background:#cfdde9;padding:24px 12px">
   <div style="max-width:520px;margin:0 auto;background:#e8f0f6;border-top:4px solid #b3262d;padding:28px 24px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.55;color:#1f2b63">
     ${body}${button}
-    <p style="margin:24px 0 0;font-family:Arial,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#3d4a7a">Keepsake</p>
+    <p style="margin:24px 0 0;font-family:'Anek Latin',Verdana,sans-serif;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#3d4a7a">Keepsake</p>
   </div></body></html>`;
 }
 

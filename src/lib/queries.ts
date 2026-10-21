@@ -1,9 +1,14 @@
-import { and, asc, desc, eq, inArray, or } from "drizzle-orm";
+import { and, asc, desc, eq, inArray, or, sql } from "drizzle-orm";
 import { db } from "@/db";
 import { letterRecipients, letters, recipients, type Letter, type Recipient } from "@/db/schema";
 import { decrypt } from "./crypto";
 
 export type LetterWithPeople = Letter & { recipientIds: string[] };
+
+export async function countRecipients(userId: string): Promise<number> {
+  const [row] = await db.select({ n: sql<number>`count(*)::int` }).from(recipients).where(eq(recipients.userId, userId));
+  return row?.n ?? 0;
+}
 
 export async function listRecipients(userId: string): Promise<Recipient[]> {
   return db.select().from(recipients).where(eq(recipients.userId, userId)).orderBy(asc(recipients.createdAt));

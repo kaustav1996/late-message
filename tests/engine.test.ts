@@ -6,7 +6,7 @@ import { arm, checkIn, getSwitch, setRhythm, takeBack } from "@/lib/clock";
 import { encrypt, recipientToken, sha256 } from "@/lib/crypto";
 import { setProviderOverrides, type OutboundMessage } from "@/lib/notify";
 import type { ChannelProvider } from "@/lib/notify/types";
-import { creditPayment } from "@/lib/payments/dodo";
+import { creditPayment, reverseCredit } from "@/lib/payments/dodo";
 import { timeline } from "@/lib/schedule";
 import { runTick } from "@/lib/tick";
 
@@ -154,6 +154,17 @@ describe("the clock", () => {
     expect(cancelled.every((d) => d.lastError?.startsWith("Superseded"))).toBe(true);
   });
 
+  it("advances rows whose times were written by the database itself", async () => {
+    const { owner } = await seed();
+    await arm(owner.id, t0);
+    await db.execute(
+      sql`update switches set last_check_in_at = now() - interval '9 days 20 hours', next_action_at = now() where user_id = ${owner.id}`,
+    );
+    const summary = await runTick(new Date());
+    expect(summary.advanced).toBe(1);
+    expect((await getSwitch(owner.id)).stage).toBe(3);
+  });
+
   it("restarts the clock when the rhythm changes", async () => {
     const { owner } = await seed();
     await arm(owner.id, t0);
@@ -179,5 +190,10 @@ describe("payments", () => {
     expect(await creditPayment(payment)).toBe("duplicate");
     const user = await db.query.users.findFirst({ where: eq(users.id, owner.id) });
     expect(user?.extraSlots).toBe(40);
+
+    expect(await reverseCredit("pay_123")).toBe("refunded");
+    expect(await reverseCredit("pay_123")).toBe("duplicate");
+    const after = await db.query.users.findFirst({ where: eq(users.id, owner.id) });
+    expect(after?.extraSlots).toBe(0);
   });
 });

@@ -1,0 +1,26 @@
+.mark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: var(--ink);
+  padding-block: 0.25rem;
+}
+
+.word {
+  font-size: 1.75rem;
+  font-weight: 750;
+  font-variation-settings: "wdth" 75;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  border-bottom: 3px double var(--red);
+  padding-bottom: 0.1rem;
+}
+
+.sub {
+  font-family: var(--font-hand);
+  font-size: 1.05rem;
+  color: var(--red-ink);
+  line-height: 1;
+  transform: rotate(-6deg) translateY(-0.15rem);
+}

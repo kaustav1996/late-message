@@ -49,12 +49,13 @@ export async function setRhythm(userId: string, rhythm: Rhythm, now = new Date()
   return checkIn(userId, "button", now);
 }
 
-export async function arm(userId: string, now = new Date()): Promise<Switch> {
+export async function arm(userId: string, now = new Date(), rhythm?: Rhythm): Promise<Switch> {
   const sw = await getSwitch(userId);
   if (sw.status === "released") throw new Error("Your letters have already been sent");
+  if (rhythm && !isValidRhythm(rhythm)) throw new Error("That rhythm isn't one we offer");
   await db
     .update(switches)
-    .set({ status: "armed", updatedAt: now })
+    .set({ status: "armed", updatedAt: now, ...(rhythm ? { rhythmUnit: rhythm.unit, rhythmCount: rhythm.count } : {}) })
     .where(and(eq(switches.userId, userId), eq(switches.status, "draft")));
   return checkIn(userId, "armed", now);
 }

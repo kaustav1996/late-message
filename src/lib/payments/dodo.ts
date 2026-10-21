@@ -1,5 +1,5 @@
 import DodoPayments from "dodopayments";
-import { eq, sql } from "drizzle-orm";
+import { and, eq, isNull, sql } from "drizzle-orm";
 import { db } from "@/db";
 import { payments, users, type User } from "@/db/schema";
 import { appUrl, env } from "@/lib/env";
@@ -38,14 +38,32 @@ export async function createCheckout(user: User, packs: number): Promise<string>
   return session.checkout_url;
 }
 
-type WebhookOutcome = "credited" | "duplicate" | "ignored";
+type WebhookOutcome = "credited" | "refunded" | "duplicate" | "ignored";
 
 /** Verifies the Standard Webhooks signature and credits slots once per payment. */
 export async function handleWebhook(rawBody: string, headers: Record<string, string>): Promise<WebhookOutcome> {
   if (!env().DODO_PAYMENTS_WEBHOOK_KEY) throw new Error("DODO_PAYMENTS_WEBHOOK_KEY is not set");
   const event = client().webhooks.unwrap(rawBody, { headers });
-  if (event.type !== "payment.succeeded") return "ignored";
-  return creditPayment(event.data);
+  if (event.type === "payment.succeeded") return creditPayment(event.data);
+  if (event.type === "refund.succeeded" && !event.data.is_partial) return reverseCredit(event.data.payment_id);
+  return "ignored";
+}
+
+/** A full refund takes the pack's places away again (never below zero). */
+export async function reverseCredit(paymentId: string): Promise<WebhookOutcome> {
+  return db.transaction(async (tx) => {
+    const [row] = await tx
+      .update(payments)
+      .set({ refundedAt: new Date() })
+      .where(and(eq(payments.id, paymentId), isNull(payments.refundedAt)))
+      .returning();
+    if (!row) return "duplicate";
+    await tx
+      .update(users)
+      .set({ extraSlots: sql`greatest(0, ${users.extraSlots} - ${row.slots})` })
+      .where(eq(users.id, row.userId));
+    return "refunded";
+  });
 }
 
 export async function creditPayment(payment: {

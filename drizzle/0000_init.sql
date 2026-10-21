@@ -10,16 +10,16 @@ CREATE TABLE "auth_tokens" (
 	"id" text PRIMARY KEY NOT NULL,
 	"user_id" uuid NOT NULL,
 	"purpose" "token_purpose" NOT NULL,
-	"expires_at" timestamp with time zone NOT NULL,
-	"used_at" timestamp with time zone,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+	"expires_at" timestamp (3) with time zone NOT NULL,
+	"used_at" timestamp (3) with time zone,
+	"created_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "check_ins" (
 	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
 	"user_id" uuid NOT NULL,
 	"method" "check_in_method" NOT NULL,
-	"at" timestamp with time zone DEFAULT now() NOT NULL
+	"at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "deliveries" (
@@ -31,11 +31,11 @@ CREATE TABLE "deliveries" (
 	"destination" text NOT NULL,
 	"status" "delivery_status" DEFAULT 'pending' NOT NULL,
 	"attempts" integer DEFAULT 0 NOT NULL,
-	"next_attempt_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"next_attempt_at" timestamp (3) with time zone DEFAULT now() NOT NULL,
 	"last_error" text,
 	"provider_id" text,
-	"sent_at" timestamp with time zone,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+	"sent_at" timestamp (3) with time zone,
+	"created_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "letter_recipients" (
@@ -51,8 +51,8 @@ CREATE TABLE "letters" (
 	"title" text NOT NULL,
 	"body" text NOT NULL,
 	"to_everyone" boolean DEFAULT false NOT NULL,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
-	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
+	"created_at" timestamp (3) with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "payments" (
@@ -63,7 +63,8 @@ CREATE TABLE "payments" (
 	"amount" integer NOT NULL,
 	"currency" text NOT NULL,
 	"raw" jsonb,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+	"refunded_at" timestamp (3) with time zone,
+	"created_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "recipients" (
@@ -77,15 +78,15 @@ CREATE TABLE "recipients" (
 	"via_sms" boolean DEFAULT false NOT NULL,
 	"via_whatsapp" boolean DEFAULT false NOT NULL,
 	"access_token_hash" text,
-	"first_opened_at" timestamp with time zone,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+	"first_opened_at" timestamp (3) with time zone,
+	"created_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "sessions" (
 	"id" text PRIMARY KEY NOT NULL,
 	"user_id" uuid NOT NULL,
-	"expires_at" timestamp with time zone NOT NULL,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+	"expires_at" timestamp (3) with time zone NOT NULL,
+	"created_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "switches" (
@@ -93,12 +94,12 @@ CREATE TABLE "switches" (
 	"status" "switch_status" DEFAULT 'draft' NOT NULL,
 	"rhythm_unit" "rhythm_unit" DEFAULT 'week' NOT NULL,
 	"rhythm_count" integer DEFAULT 1 NOT NULL,
-	"last_check_in_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"last_check_in_at" timestamp (3) with time zone DEFAULT now() NOT NULL,
 	"stage" integer DEFAULT 0 NOT NULL,
-	"next_action_at" timestamp with time zone,
-	"final_warning_at" timestamp with time zone,
-	"released_at" timestamp with time zone,
-	"updated_at" timestamp with time zone DEFAULT now() NOT NULL
+	"next_action_at" timestamp (3) with time zone,
+	"final_warning_at" timestamp (3) with time zone,
+	"released_at" timestamp (3) with time zone,
+	"updated_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 CREATE TABLE "users" (
@@ -106,13 +107,13 @@ CREATE TABLE "users" (
 	"email" text NOT NULL,
 	"name" text NOT NULL,
 	"password_hash" text NOT NULL,
-	"email_verified_at" timestamp with time zone,
+	"email_verified_at" timestamp (3) with time zone,
 	"phone" text,
 	"remind_by_sms" boolean DEFAULT false NOT NULL,
 	"remind_by_whatsapp" boolean DEFAULT false NOT NULL,
 	"timezone" text DEFAULT 'Asia/Kolkata' NOT NULL,
 	"extra_slots" integer DEFAULT 0 NOT NULL,
-	"created_at" timestamp with time zone DEFAULT now() NOT NULL
+	"created_at" timestamp (3) with time zone DEFAULT now() NOT NULL
 );
 --> statement-breakpoint
 ALTER TABLE "auth_tokens" ADD CONSTRAINT "auth_tokens_user_id_users_id_fk" FOREIGN KEY ("user_id") REFERENCES "public"."users"("id") ON DELETE cascade ON UPDATE no action;--> statement-breakpoint
