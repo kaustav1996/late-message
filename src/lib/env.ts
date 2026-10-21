@@ -44,6 +44,11 @@ export function env(): Env {
       const issues = parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; ");
       throw new Error(`Invalid environment: ${issues}`);
     }
+    // Every link in every message is built from APP_URL; a localhost link
+    // sent to a grieving family is worse than an error here.
+    if (process.env.NODE_ENV === "production" && !process.env.APP_URL) {
+      throw new Error("Invalid environment: APP_URL must be set in production");
+    }
     cached = parsed.data;
   }
   return cached;

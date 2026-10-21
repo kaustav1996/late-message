@@ -28,9 +28,9 @@ export function LetterView({ ownerName, recipientName, lastHeardAt, letters, tz,
             <span className={styles.from}>from {ownerName}</span>
           </h1>
           <p className={styles.note}>
-            {from} asked us to keep {letters.length === 1 ? "this letter" : "these letters"} and send{" "}
-            {letters.length === 1 ? "it" : "them"} to you if they ever stopped checking in with us. We last heard from them
-            on {formatDate(lastHeardAt, tz)}.
+            {from} asked us to keep {letters.length === 1 ? "this letter" : "these letters"} for you, and to send{" "}
+            {letters.length === 1 ? "it" : "them"} if {from} ever stopped checking in with us. We last heard from {from} on{" "}
+            {formatDate(lastHeardAt, tz)}.
           </p>
         </div>
 

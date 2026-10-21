@@ -19,13 +19,13 @@ export const STARTERS = [
     kind: "template" as const,
     body: `Dear {name},
 
-If you are reading this, I haven't been able to check in for a while, and you are one of the people I trust with the practical things.
+If you are reading this, I haven’t been able to check in for a while, and you are one of the people I trust with the practical things.
 
 The important papers are in:
 The bank accounts and policies are listed in:
 The person to call first is:
 
-Please don't worry about getting everything right. Take your time.
+Please don’t worry about getting everything right. Take your time.
 
 {my_name}`,
   },
@@ -48,7 +48,7 @@ With all my love,
     kind: "personal" as const,
     body: `{name},
 
-These are the accounts that need closing or looking after. The password manager's master password is written below; everything else is inside it.
+These are the accounts that need closing or looking after. The password manager’s master password is written below; everything else is inside it.
 
 Password manager:
 Master password:

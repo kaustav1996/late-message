@@ -13,12 +13,12 @@ export const revalidate = 3600;
 
 const QUESTIONS = [
   {
-    q: "What if I'm travelling, ill, or just busy?",
-    a: "Nothing goes out the moment you miss a check-in. We remind you before it's due, when it's missed, and once more before anything is sent, on email and on SMS or WhatsApp if you turn them on. A tap on any of those reminders counts. If you're often away, choose a longer rhythm.",
-  },
-  {
     q: "Could a letter go out by mistake?",
     a: "Only if you ignore every reminder for the whole grace period. Even then, if you turn out to be fine, you can log in and close the links so nobody can open your letters.",
+  },
+  {
+    q: "What if I'm travelling, ill, or just busy?",
+    a: "Nothing goes out the moment you miss a check-in. We remind you before it's due, when it's missed, and once more before anything is sent, on email and on SMS or WhatsApp if you turn them on. A tap on any of those reminders counts. If you're often away, choose a longer rhythm.",
   },
   {
     q: "Who can read what I write?",
@@ -36,7 +36,8 @@ const QUESTIONS = [
 
 export default function Home() {
   const today = postmarkParts(new Date(), "Asia/Kolkata");
-  const host = new URL(process.env.APP_URL ?? "http://localhost:3000").host;
+  const appHost = process.env.APP_URL ? new URL(process.env.APP_URL).host : "";
+  const exampleLink = `${appHost && !appHost.startsWith("localhost") ? appHost : ""}/l/7hQ2…`;
 
   return (
     <>
@@ -74,8 +75,7 @@ export default function Home() {
             </div>
 
             <p className={styles.lede}>
-              Write them a letter now. Keepsake keeps it sealed and checks on you, every few hours or every few months,
-              on a rhythm you choose. If you stop answering, we deliver it to them on WhatsApp, SMS and email.
+              Write them a letter now, and Keepsake keeps it sealed until the day you stop checking in.
             </p>
 
             <div className={styles.sender}>
@@ -92,8 +92,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <p className={`fold ${styles.foldLine}`} aria-hidden="true">
-            fold here <span lang="hi">/ यहाँ से मोड़ें</span>
+          <p className={styles.cutLine} aria-hidden="true">
+            <span>
+              to open, cut here <span lang="hi">/ खोलने के लिए यहाँ से काटें</span>
+            </span>
           </p>
         </section>
 
@@ -146,10 +148,10 @@ export default function Home() {
             <figcaption className={styles.exampleTag}>Example</figcaption>
             <div className={styles.bubble}>
               <p>
-                Asha, Ravi Menon left a letter for you and asked Keepsake to send it if they stopped checking in. Read it
+                Asha, Ravi Menon left a letter for you and asked Keepsake to send it if Ravi stopped checking in. Read it
                 here:
               </p>
-              <p className={styles.bubbleLink}>{host}/l/7hQ2…</p>
+              <p className={styles.bubbleLink}>{exampleLink}</p>
               <span className={styles.bubbleTime}>10:12 am</span>
             </div>
             <div className={styles.opened}>
@@ -194,8 +196,8 @@ export default function Home() {
             Fair questions
           </h2>
           <div className={styles.qList}>
-            {QUESTIONS.map((item) => (
-              <details key={item.q} className={styles.q}>
+            {QUESTIONS.map((item, i) => (
+              <details key={item.q} className={styles.q} open={i === 0}>
                 <summary>{item.q}</summary>
                 <p>{item.a}</p>
               </details>

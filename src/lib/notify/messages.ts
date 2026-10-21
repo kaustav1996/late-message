@@ -83,11 +83,12 @@ export function releaseMessage(ctx: {
   tz: string;
 }): Rendered {
   const to = firstName(ctx.recipientName);
+  const from = firstName(ctx.ownerName);
   const since = formatDate(ctx.lastCheckInAt, ctx.tz);
   const what = ctx.letterCount === 1 ? "a letter" : `${ctx.letterCount} letters`;
   const lines = [
     `Dear ${to},`,
-    `${ctx.ownerName} asked us to get in touch with you if they ever stopped checking in with us. We haven't heard from them since ${since}.`,
+    `${ctx.ownerName} asked us to get in touch with you if ${from} ever stopped checking in with us. We haven't heard from ${from} since ${since}.`,
     `They left ${what} for you. The link below is only for you, so please don't forward it.`,
   ];
   return {
@@ -96,7 +97,7 @@ export function releaseMessage(ctx: {
     text: `${lines.join("\n\n")}\n\n${ctx.link}\n\nKeepsake`,
     html: emailHtml(lines, { label: ctx.letterCount === 1 ? "Read the letter" : "Read the letters", href: ctx.link }),
     templateVars: [to, ctx.ownerName, ctx.link],
-    smsText: `${to}, ${ctx.ownerName} left ${what} for you and asked Keepsake to send it if they stopped checking in. Read it here: ${ctx.link}`,
+    smsText: `${to}, ${ctx.ownerName} left ${what} for you and asked Keepsake to send it if ${from} stopped checking in. Read it here: ${ctx.link}`,
   };
 }
 

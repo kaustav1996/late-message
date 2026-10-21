@@ -87,7 +87,7 @@ WhatsApp only lets businesses message someone who hasn't written to them in the 
 
 `TWILIO_WA_TEMPLATE_RELEASE`, with variables `{{1}}` the recipient's first name, `{{2}}` the owner's name, and `{{3}}` the letter link:
 
-> Dear {{1}}, {{2}} asked Keepsake to send you something if they stopped checking in with us. Read it here: {{3}}
+> Dear {{1}}, {{2}} left a letter for you with Keepsake, to be sent if we stopped hearing from {{2}}. Read it here: {{3}}
 
 Without template SIDs the plain text is sent, which works only in the Twilio sandbox.
 

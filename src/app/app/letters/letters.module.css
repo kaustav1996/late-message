@@ -129,7 +129,6 @@
   padding: calc(var(--line) * 0.55) var(--space-5) var(--line);
   border: 1px solid var(--ink-line);
   border-top: 3px solid var(--red);
-  border-radius: 0;
   background-color: var(--paper-lighter);
   background-image: linear-gradient(to bottom, transparent calc(var(--line) - 1px), rgb(28 42 94 / 0.13) calc(var(--line) - 1px));
   background-size: 100% var(--line);
