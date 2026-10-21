@@ -117,6 +117,7 @@ To change the price or pack size, edit `src/lib/pricing.ts` and the Dodo product
 
 - Review `/privacy`, `/terms` and `/refunds` (`src/app/(legal)/`). They're plain-language drafts, and the refund window (14 days) is a placeholder for you to decide.
 - Set `APP_URL` to the public URL: every link in every message is built from it.
+- Change `EXAMPLE_HOST` in `src/app/page.tsx` to your domain; it's the host shown in the landing page's example message.
 - Run `npm run db:migrate` against the production database.
 
 ## Design

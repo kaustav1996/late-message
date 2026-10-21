@@ -11,6 +11,9 @@ import styles from "./landing.module.css";
 
 export const revalidate = 3600;
 
+// The host shown in the example message. Change it to your own domain.
+const EXAMPLE_HOST = "keepsake.in";
+
 const QUESTIONS = [
   {
     q: "Could a letter go out by mistake?",
@@ -36,8 +39,6 @@ const QUESTIONS = [
 
 export default function Home() {
   const today = postmarkParts(new Date(), "Asia/Kolkata");
-  const appHost = process.env.APP_URL ? new URL(process.env.APP_URL).host : "";
-  const exampleLink = `${appHost && !appHost.startsWith("localhost") ? appHost : ""}/l/7hQ2…`;
 
   return (
     <>
@@ -148,10 +149,10 @@ export default function Home() {
             <figcaption className={styles.exampleTag}>Example</figcaption>
             <div className={styles.bubble}>
               <p>
-                Asha, Ravi Menon left a letter for you and asked Keepsake to send it if Ravi stopped checking in. Read it
+                Asha, Ravi Menon left a letter for you with Keepsake, to be sent if we stopped hearing from Ravi. Read it
                 here:
               </p>
-              <p className={styles.bubbleLink}>{exampleLink}</p>
+              <p className={styles.bubbleLink}>{EXAMPLE_HOST}/l/7hQ2…</p>
               <span className={styles.bubbleTime}>10:12 am</span>
             </div>
             <div className={styles.opened}>

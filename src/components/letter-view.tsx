@@ -29,7 +29,7 @@ export function LetterView({ ownerName, recipientName, lastHeardAt, letters, tz,
           </h1>
           <p className={styles.note}>
             {from} asked us to keep {letters.length === 1 ? "this letter" : "these letters"} for you, and to send{" "}
-            {letters.length === 1 ? "it" : "them"} if {from} ever stopped checking in with us. We last heard from {from} on{" "}
+            {letters.length === 1 ? "it" : "them"} if the check-ins ever stopped. We last heard from {from} on{" "}
             {formatDate(lastHeardAt, tz)}.
           </p>
         </div>

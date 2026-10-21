@@ -88,8 +88,8 @@ export function releaseMessage(ctx: {
   const what = ctx.letterCount === 1 ? "a letter" : `${ctx.letterCount} letters`;
   const lines = [
     `Dear ${to},`,
-    `${ctx.ownerName} asked us to get in touch with you if ${from} ever stopped checking in with us. We haven't heard from ${from} since ${since}.`,
-    `They left ${what} for you. The link below is only for you, so please don't forward it.`,
+    `${ctx.ownerName} asked us to keep something for you, and to send it if the check-ins ever stopped. We haven't heard from ${from} since ${since}.`,
+    `${from} left ${what} for you. The link below is only for you, so please don't forward it.`,
   ];
   return {
     key: "release",
@@ -97,7 +97,7 @@ export function releaseMessage(ctx: {
     text: `${lines.join("\n\n")}\n\n${ctx.link}\n\nKeepsake`,
     html: emailHtml(lines, { label: ctx.letterCount === 1 ? "Read the letter" : "Read the letters", href: ctx.link }),
     templateVars: [to, ctx.ownerName, ctx.link],
-    smsText: `${to}, ${ctx.ownerName} left ${what} for you and asked Keepsake to send it if ${from} stopped checking in. Read it here: ${ctx.link}`,
+    smsText: `${to}, ${ctx.ownerName} left ${what} for you with Keepsake, to be sent if we stopped hearing from ${from}. Read it here: ${ctx.link}`,
   };
 }
 
