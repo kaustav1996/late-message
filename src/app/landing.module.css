@@ -451,7 +451,9 @@
 }
 
 .q summary:hover {
-  color: var(--red-ink);
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: 0.22em;
 }
 
 .q p {

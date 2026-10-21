@@ -17,10 +17,12 @@
   padding-bottom: 0.1rem;
 }
 
+/* A printed label, like the card's own masthead. */
 .sub {
-  font-family: var(--font-hand);
-  font-size: 1.05rem;
+  font-family: var(--font-print);
+  font-size: 1rem;
+  font-weight: 650;
+  font-variation-settings: "wdth" 80;
   color: var(--red-ink);
   line-height: 1;
-  transform: rotate(-6deg) translateY(-0.15rem);
 }

@@ -1,0 +1,568 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T22:02:23.825096+00:00",
+  "title": "Design System: Keepsake",
+  "extensions": {
+    "colorMeta": {
+      "paper": {
+        "role": "neutral",
+        "displayName": "Inland Blue",
+        "canonical": "#c9dae7",
+        "tonalRamp": [
+          "oklch(15% 0.026 240.7)",
+          "oklch(25% 0.026 240.7)",
+          "oklch(35% 0.026 240.7)",
+          "oklch(45% 0.026 240.7)",
+          "oklch(55% 0.026 240.7)",
+          "oklch(70% 0.026 240.7)",
+          "oklch(85% 0.026 240.7)",
+          "oklch(95% 0.026 240.7)"
+        ]
+      },
+      "paper-light": {
+        "role": "neutral",
+        "displayName": "Pale Sheet",
+        "canonical": "#e2ecf4",
+        "tonalRamp": [
+          "oklch(15% 0.015 241.8)",
+          "oklch(25% 0.015 241.8)",
+          "oklch(35% 0.015 241.8)",
+          "oklch(45% 0.015 241.8)",
+          "oklch(55% 0.015 241.8)",
+          "oklch(70% 0.015 241.8)",
+          "oklch(85% 0.015 241.8)",
+          "oklch(95% 0.015 241.8)"
+        ]
+      },
+      "paper-lighter": {
+        "role": "neutral",
+        "displayName": "Letter Sheet",
+        "canonical": "#eef4f9",
+        "tonalRamp": [
+          "oklch(15% 0.009 242.8)",
+          "oklch(25% 0.009 242.8)",
+          "oklch(35% 0.009 242.8)",
+          "oklch(45% 0.009 242.8)",
+          "oklch(55% 0.009 242.8)",
+          "oklch(70% 0.009 242.8)",
+          "oklch(85% 0.009 242.8)",
+          "oklch(95% 0.009 242.8)"
+        ]
+      },
+      "paper-deep": {
+        "role": "neutral",
+        "displayName": "Deep Blue",
+        "canonical": "#b4cadb",
+        "tonalRamp": [
+          "oklch(15% 0.034 241.2)",
+          "oklch(25% 0.034 241.2)",
+          "oklch(35% 0.034 241.2)",
+          "oklch(45% 0.034 241.2)",
+          "oklch(55% 0.034 241.2)",
+          "oklch(70% 0.034 241.2)",
+          "oklch(85% 0.034 241.2)",
+          "oklch(95% 0.034 241.2)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Printing Indigo",
+        "canonical": "#1c2a5e",
+        "tonalRamp": [
+          "oklch(15% 0.094 268.9)",
+          "oklch(25% 0.094 268.9)",
+          "oklch(35% 0.094 268.9)",
+          "oklch(45% 0.094 268.9)",
+          "oklch(55% 0.094 268.9)",
+          "oklch(70% 0.094 268.9)",
+          "oklch(85% 0.094 268.9)",
+          "oklch(95% 0.094 268.9)"
+        ]
+      },
+      "ink-deep": {
+        "role": "primary",
+        "displayName": "Night Indigo",
+        "canonical": "#14204d",
+        "tonalRamp": [
+          "oklch(15% 0.085 268.7)",
+          "oklch(25% 0.085 268.7)",
+          "oklch(35% 0.085 268.7)",
+          "oklch(45% 0.085 268.7)",
+          "oklch(55% 0.085 268.7)",
+          "oklch(70% 0.085 268.7)",
+          "oklch(85% 0.085 268.7)",
+          "oklch(95% 0.085 268.7)"
+        ]
+      },
+      "ink-soft": {
+        "role": "primary",
+        "displayName": "Soft Indigo",
+        "canonical": "#33427a",
+        "tonalRamp": [
+          "oklch(15% 0.096 270.2)",
+          "oklch(25% 0.096 270.2)",
+          "oklch(35% 0.096 270.2)",
+          "oklch(45% 0.096 270.2)",
+          "oklch(55% 0.096 270.2)",
+          "oklch(70% 0.096 270.2)",
+          "oklch(85% 0.096 270.2)",
+          "oklch(95% 0.096 270.2)"
+        ]
+      },
+      "ink-faint": {
+        "role": "primary",
+        "displayName": "Faint Indigo",
+        "canonical": "#4a5785",
+        "tonalRamp": [
+          "oklch(15% 0.077 271.2)",
+          "oklch(25% 0.077 271.2)",
+          "oklch(35% 0.077 271.2)",
+          "oklch(45% 0.077 271.2)",
+          "oklch(55% 0.077 271.2)",
+          "oklch(70% 0.077 271.2)",
+          "oklch(85% 0.077 271.2)",
+          "oklch(95% 0.077 271.2)"
+        ]
+      },
+      "ink-line": {
+        "role": "neutral",
+        "displayName": "Ink Line",
+        "canonical": "rgb(28 42 94 / 0.28)",
+        "tonalRamp": [
+          "oklch(15% 0.094 268.9)",
+          "oklch(25% 0.094 268.9)",
+          "oklch(35% 0.094 268.9)",
+          "oklch(45% 0.094 268.9)",
+          "oklch(55% 0.094 268.9)",
+          "oklch(70% 0.094 268.9)",
+          "oklch(85% 0.094 268.9)",
+          "oklch(95% 0.094 268.9)"
+        ]
+      },
+      "ink-hair": {
+        "role": "neutral",
+        "displayName": "Ink Hair",
+        "canonical": "rgb(28 42 94 / 0.14)",
+        "tonalRamp": [
+          "oklch(15% 0.094 268.9)",
+          "oklch(25% 0.094 268.9)",
+          "oklch(35% 0.094 268.9)",
+          "oklch(45% 0.094 268.9)",
+          "oklch(55% 0.094 268.9)",
+          "oklch(70% 0.094 268.9)",
+          "oklch(85% 0.094 268.9)",
+          "oklch(95% 0.094 268.9)"
+        ]
+      },
+      "post-red": {
+        "role": "secondary",
+        "displayName": "India Post Red",
+        "canonical": "#b3262d",
+        "tonalRamp": [
+          "oklch(15% 0.160 24.1)",
+          "oklch(25% 0.160 24.1)",
+          "oklch(35% 0.160 24.1)",
+          "oklch(45% 0.160 24.1)",
+          "oklch(55% 0.160 24.1)",
+          "oklch(70% 0.160 24.1)",
+          "oklch(85% 0.160 24.1)",
+          "oklch(95% 0.160 24.1)"
+        ]
+      },
+      "post-red-ink": {
+        "role": "secondary",
+        "displayName": "Red Ink",
+        "canonical": "#8f1d24",
+        "tonalRamp": [
+          "oklch(15% 0.149 23.4)",
+          "oklch(25% 0.149 23.4)",
+          "oklch(35% 0.149 23.4)",
+          "oklch(45% 0.149 23.4)",
+          "oklch(55% 0.149 23.4)",
+          "oklch(70% 0.149 23.4)",
+          "oklch(85% 0.149 23.4)",
+          "oklch(95% 0.149 23.4)"
+        ]
+      },
+      "post-red-wash": {
+        "role": "secondary",
+        "displayName": "Red Wash",
+        "canonical": "#f0d9da",
+        "tonalRamp": [
+          "oklch(15% 0.026 14.6)",
+          "oklch(25% 0.026 14.6)",
+          "oklch(35% 0.026 14.6)",
+          "oklch(45% 0.026 14.6)",
+          "oklch(55% 0.026 14.6)",
+          "oklch(70% 0.026 14.6)",
+          "oklch(85% 0.026 14.6)",
+          "oklch(95% 0.026 14.6)"
+        ]
+      },
+      "stamp-violet": {
+        "role": "tertiary",
+        "displayName": "Rubber-Stamp Violet",
+        "canonical": "#563a86",
+        "tonalRamp": [
+          "oklch(15% 0.123 297.9)",
+          "oklch(25% 0.123 297.9)",
+          "oklch(35% 0.123 297.9)",
+          "oklch(45% 0.123 297.9)",
+          "oklch(55% 0.123 297.9)",
+          "oklch(70% 0.123 297.9)",
+          "oklch(85% 0.123 297.9)",
+          "oklch(95% 0.123 297.9)"
+        ]
+      },
+      "marigold": {
+        "role": "tertiary",
+        "displayName": "Marigold",
+        "canonical": "#e39b2d",
+        "tonalRamp": [
+          "oklch(15% 0.145 72.4)",
+          "oklch(25% 0.145 72.4)",
+          "oklch(35% 0.145 72.4)",
+          "oklch(45% 0.145 72.4)",
+          "oklch(55% 0.145 72.4)",
+          "oklch(70% 0.145 72.4)",
+          "oklch(85% 0.145 72.4)",
+          "oklch(95% 0.145 72.4)"
+        ]
+      },
+      "marigold-deep": {
+        "role": "tertiary",
+        "displayName": "Deep Marigold",
+        "canonical": "#b86e12",
+        "tonalRamp": [
+          "oklch(15% 0.132 63.7)",
+          "oklch(25% 0.132 63.7)",
+          "oklch(35% 0.132 63.7)",
+          "oklch(45% 0.132 63.7)",
+          "oklch(55% 0.132 63.7)",
+          "oklch(70% 0.132 63.7)",
+          "oklch(85% 0.132 63.7)",
+          "oklch(95% 0.132 63.7)"
+        ]
+      },
+      "leaf": {
+        "role": "tertiary",
+        "displayName": "Leaf",
+        "canonical": "#2d6a4d",
+        "tonalRamp": [
+          "oklch(15% 0.080 160.4)",
+          "oklch(25% 0.080 160.4)",
+          "oklch(35% 0.080 160.4)",
+          "oklch(45% 0.080 160.4)",
+          "oklch(55% 0.080 160.4)",
+          "oklch(70% 0.080 160.4)",
+          "oklch(85% 0.080 160.4)",
+          "oklch(95% 0.080 160.4)"
+        ]
+      },
+      "ok": {
+        "role": "neutral",
+        "displayName": "Success Green",
+        "canonical": "#24603f",
+        "tonalRamp": [
+          "oklch(15% 0.083 156.3)",
+          "oklch(25% 0.083 156.3)",
+          "oklch(35% 0.083 156.3)",
+          "oklch(45% 0.083 156.3)",
+          "oklch(55% 0.083 156.3)",
+          "oklch(70% 0.083 156.3)",
+          "oklch(85% 0.083 156.3)",
+          "oklch(95% 0.083 156.3)"
+        ]
+      },
+      "ok-wash": {
+        "role": "neutral",
+        "displayName": "Success Wash",
+        "canonical": "#d5e9dc",
+        "tonalRamp": [
+          "oklch(15% 0.027 157.3)",
+          "oklch(25% 0.027 157.3)",
+          "oklch(35% 0.027 157.3)",
+          "oklch(45% 0.027 157.3)",
+          "oklch(55% 0.027 157.3)",
+          "oklch(70% 0.027 157.3)",
+          "oklch(85% 0.027 157.3)",
+          "oklch(95% 0.027 157.3)"
+        ]
+      },
+      "whatsapp-green": {
+        "role": "neutral",
+        "displayName": "WhatsApp Green",
+        "canonical": "#d8f3c8",
+        "tonalRamp": [
+          "oklch(15% 0.064 133.9)",
+          "oklch(25% 0.064 133.9)",
+          "oklch(35% 0.064 133.9)",
+          "oklch(45% 0.064 133.9)",
+          "oklch(55% 0.064 133.9)",
+          "oklch(70% 0.064 133.9)",
+          "oklch(85% 0.064 133.9)",
+          "oklch(95% 0.064 133.9)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hand Display",
+        "purpose": "Handwritten address blocks, recipient greeting, auth titles, closing line."
+      },
+      "headline": {
+        "displayName": "Printed Headline",
+        "purpose": "Landing section headings, narrow Anek."
+      },
+      "title": {
+        "displayName": "Page Title",
+        "purpose": "App page titles and legal h1."
+      },
+      "section": {
+        "displayName": "Section Title",
+        "purpose": "App section titles and legal h2."
+      },
+      "body": {
+        "displayName": "Printed Body",
+        "purpose": "Default UI text."
+      },
+      "read": {
+        "displayName": "Reading Serif",
+        "purpose": "Letter bodies, explanatory letter text, excerpts, legal prose, writing paper."
+      },
+      "hand": {
+        "displayName": "Hand",
+        "purpose": "Salutations, signatures, margin notes, relative due time, empty-state titles."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Form labels, legends, the From legend."
+      },
+      "numeral": {
+        "displayName": "Price Numeral",
+        "purpose": "Price numerals in red ink; the clock's due date uses the same narrow bold in indigo."
+      }
+    },
+    "shadows": [
+      {
+        "name": "sheet",
+        "value": "0 1px 2px rgb(28 42 94 / 0.12), 0 12px 28px -18px rgb(28 42 94 / 0.4)",
+        "purpose": "App sheets lifted off the blue ground."
+      },
+      {
+        "name": "sheet-landing",
+        "value": "0 1px 2px rgb(28 42 94 / 0.12), 0 18px 40px -22px rgb(28 42 94 / 0.45)",
+        "purpose": "The inside of the card and recipient letter sheets (letter page uses 16px 34px -22px)."
+      },
+      {
+        "name": "sheet-opened",
+        "value": "0 1px 2px rgb(28 42 94 / 0.12), 0 16px 32px -18px rgb(28 42 94 / 0.5)",
+        "purpose": "The tilted opened example letter."
+      },
+      {
+        "name": "button",
+        "value": "0 1px 0 rgb(255 255 255 / 0.35) inset, 0 2px 6px -2px rgb(29 42 94 / 0.14)",
+        "purpose": "Primary buttons at rest; removed on press."
+      },
+      {
+        "name": "stamp",
+        "value": "drop-shadow(0 3px 5px rgb(28 42 94 / 0.22))",
+        "purpose": "Stamp artwork (filter)."
+      },
+      {
+        "name": "focus-halo",
+        "value": "0 0 0 3px rgb(179 38 45 / 0.28)",
+        "purpose": "Input focus halo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All transitions and animations."
+      },
+      {
+        "name": "state",
+        "value": "160ms",
+        "purpose": "Colour and border transitions on hover."
+      },
+      {
+        "name": "press",
+        "value": "120ms",
+        "purpose": "Button press nudge."
+      },
+      {
+        "name": "stamp-in",
+        "value": "420ms",
+        "purpose": "Timeline stops stamping in."
+      },
+      {
+        "name": "postmark-press",
+        "value": "520-560ms",
+        "purpose": "Postmark pressing in with scale, tilt and blur."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "1ms",
+        "purpose": "All animation and transition durations under prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "options-2col",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "720px"
+      },
+      {
+        "name": "app-header",
+        "value": "760px"
+      },
+      {
+        "name": "auth-split",
+        "value": "900px"
+      },
+      {
+        "name": "lg",
+        "value": "1000px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Indigo printed button for the main action on every surface.",
+      "html": "<button class=\"ds-btn\">Start writing, free <svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:.5rem;min-height:48px;padding:.7rem 1.25rem .6rem;border:1.5px solid var(--ink,#1c2a5e);border-radius:3px;background:var(--ink,#1c2a5e);color:var(--paper-lighter,#eef4f9);font-family:var(--font-print,'Anek Latin Variable',system-ui,sans-serif);font-size:1.125rem;font-weight:600;font-variation-settings:'wdth' 92;line-height:1.1;cursor:pointer;box-shadow:0 1px 0 rgb(255 255 255/.35) inset,0 2px 6px -2px rgb(29 42 94/.14);transition:background-color 160ms cubic-bezier(.16,1,.3,1),transform 120ms cubic-bezier(.16,1,.3,1)}.ds-btn svg{width:1.1em;height:1.1em}.ds-btn:hover{background:#14204d}.ds-btn:active{transform:translateY(1px);box-shadow:none}.ds-btn:focus-visible{outline:2px solid #b3262d;outline-offset:3px}"
+    },
+    {
+      "name": "Quiet Button",
+      "kind": "button",
+      "refersTo": "button-quiet",
+      "description": "Secondary action: transparent with a soft indigo border.",
+      "html": "<button class=\"ds-btn-quiet\">Preview as Asha</button>",
+      "css": ".ds-btn-quiet{min-height:48px;padding:.7rem 1.25rem .6rem;border:1.5px solid #33427a;border-radius:3px;background:transparent;color:#1c2a5e;font-family:'Anek Latin Variable',system-ui,sans-serif;font-size:1.125rem;font-weight:600;font-variation-settings:'wdth' 92;cursor:pointer;transition:background-color 160ms cubic-bezier(.16,1,.3,1)}.ds-btn-quiet:hover{background:#e2ecf4}.ds-btn-quiet:focus-visible{outline:2px solid #b3262d;outline-offset:3px}"
+    },
+    {
+      "name": "Danger Button",
+      "kind": "button",
+      "refersTo": "button-danger",
+      "description": "Destructive action in red ink, an alarm state.",
+      "html": "<button class=\"ds-btn-danger\">Delete this letter</button>",
+      "css": ".ds-btn-danger{min-height:48px;padding:.7rem 1.25rem .6rem;border:1.5px solid #b3262d;border-radius:3px;background:transparent;color:#8f1d24;font-family:'Anek Latin Variable',system-ui,sans-serif;font-size:1.125rem;font-weight:600;font-variation-settings:'wdth' 92;cursor:pointer;transition:background-color 160ms cubic-bezier(.16,1,.3,1)}.ds-btn-danger:hover{background:#f0d9da}.ds-btn-danger:focus-visible{outline:2px solid #b3262d;outline-offset:3px}"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Letter Sheet field with an indigo border and red focus halo.",
+      "html": "<label class=\"ds-field\"><span>Their name</span><input class=\"ds-input\" placeholder=\"Asha Menon\"></label>",
+      "css": ".ds-field{display:grid;gap:.5rem;font-family:'Anek Latin Variable',system-ui,sans-serif;color:#1c2a5e}.ds-field>span{font-weight:600;font-size:1rem}.ds-input{min-height:48px;padding:.65rem .8rem .55rem;border:1px solid #4a5785;border-radius:3px;background:#eef4f9;color:#1c2a5e;font:inherit;font-size:1.125rem;transition:border-color 160ms,box-shadow 160ms}.ds-input::placeholder{color:#4a5785}.ds-input:hover{border-color:#33427a}.ds-input:focus{outline:none;border-color:#1c2a5e;box-shadow:0 0 0 3px rgb(179 38 45/.28)}"
+    },
+    {
+      "name": "Rhythm Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Pill choice in the rhythm picker; selected fills indigo.",
+      "html": "<div class=\"ds-chips\"><button class=\"ds-chip\">day</button><button class=\"ds-chip\" aria-pressed=\"true\">week</button><button class=\"ds-chip\">month</button></div>",
+      "css": ".ds-chips{display:flex;gap:.5rem;flex-wrap:wrap}.ds-chip{min-height:44px;padding:.5rem .95rem .4rem;border:1.5px solid #33427a;border-radius:999px;background:#eef4f9;color:#1c2a5e;font-family:'Anek Latin Variable',system-ui,sans-serif;font-size:1.125rem;font-weight:600;font-variation-settings:'wdth' 90;cursor:pointer;transition:background-color 160ms}.ds-chip:hover{background:#c9dae7}.ds-chip[aria-pressed=true]{background:#1c2a5e;border-color:#1c2a5e;color:#eef4f9}.ds-chip:focus-visible{outline:2px solid #b3262d;outline-offset:3px}"
+    },
+    {
+      "name": "App Navigation",
+      "kind": "nav",
+      "refersTo": "",
+      "description": "App tabs with a 3px bottom bar over the red double rule.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" aria-current=\"page\">Today</a><a href=\"#\">People</a><a href=\"#\">Letters</a><a href=\"#\">Settings</a></nav>",
+      "css": ".ds-nav{display:flex;gap:.25rem;border-bottom:1px solid #b3262d;box-shadow:0 -2px 0 #b3262d inset;padding-bottom:5px;background:#c9dae7;font-family:'Anek Latin Variable',system-ui,sans-serif}.ds-nav a{display:inline-flex;align-items:center;min-height:48px;padding:0 .75rem;color:#33427a;font-size:1.125rem;font-weight:550;text-decoration:none;border-bottom:3px solid transparent;transition:color 160ms,border-color 160ms}.ds-nav a:hover{color:#1c2a5e;border-bottom-color:rgb(28 42 94/.28)}.ds-nav a[aria-current=page]{color:#1c2a5e;font-weight:700;border-bottom-color:#1c2a5e}.ds-nav a:focus-visible{outline:2px solid #b3262d;outline-offset:3px}"
+    },
+    {
+      "name": "Letter Sheet",
+      "kind": "card",
+      "refersTo": "letter-sheet",
+      "description": "What a recipient reads: square sheet, red top border, Martel body, Kalam salutation.",
+      "html": "<article class=\"ds-sheet\"><p class=\"ds-salute\">Dear Asha,</p><p class=\"ds-read\">The keys to the flat are with Mrs Pillai downstairs, and the papers you'll need are in the blue file in the steel almirah.</p><p class=\"ds-sign\">Ravi</p></article>",
+      "css": ".ds-sheet{display:grid;gap:.75rem;max-width:400px;padding:1.5rem 1.5rem 1rem;background:#eef4f9;border-top:3px solid #b3262d;border-radius:0;color:#1c2a5e;box-shadow:0 1px 2px rgb(28 42 94/.12),0 16px 32px -18px rgb(28 42 94/.5)}.ds-salute,.ds-sign{font-family:Kalam,cursive;font-size:1.75rem;line-height:1;margin:0}.ds-sign{font-size:1.375rem;justify-self:end;transform:rotate(-4deg)}.ds-read{font-family:Martel,Georgia,serif;font-size:1rem;line-height:1.7;margin:0}"
+    },
+    {
+      "name": "From Box",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Printed red frame with its bilingual legend set into the top edge; holds the primary action or auth form.",
+      "html": "<div class=\"ds-from\"><p class=\"ds-from-label\">From <span lang=\"hi\">/ प्रेषक</span></p><button class=\"ds-from-btn\">Start writing, free</button></div>",
+      "css": ".ds-from{position:relative;max-width:520px;padding:2rem 1.5rem 1.5rem;border:1.5px solid #b3262d;background:#c9dae7;font-family:'Anek Latin Variable','Anek Devanagari Variable',system-ui,sans-serif}.ds-from-label{position:absolute;top:-.85rem;left:.75rem;margin:0;padding:0 .5rem;background:#c9dae7;color:#8f1d24;font-size:1rem;font-weight:650;font-variation-settings:'wdth' 80}.ds-from-btn{min-height:60px;padding:.7rem 1.75rem .6rem;border:1.5px solid #1c2a5e;border-radius:3px;background:#1c2a5e;color:#eef4f9;font:inherit;font-size:1.375rem;font-weight:600;cursor:pointer}.ds-from-btn:hover{background:#14204d}.ds-from-btn:focus-visible{outline:2px solid #b3262d;outline-offset:3px}"
+    },
+    {
+      "name": "Stamped Timeline Stop",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "A rhythm-timeline stop: violet stamped date, indigo title; the release stop turns red.",
+      "html": "<ol class=\"ds-track\"><li><span class=\"ds-when\">Mon, 2 Nov, 9:00 am</span><span class=\"ds-t\">You check in</span></li><li class=\"ds-release\"><span class=\"ds-when\">Thu, 12 Nov, 9:00 pm</span><span class=\"ds-t\">Your letters go out</span></li></ol>",
+      "css": ".ds-track{list-style:none;margin:0;padding:0 0 0 1.5rem;display:grid;gap:1.5rem;position:relative;font-family:'Anek Latin Variable',system-ui,sans-serif;color:#1c2a5e}.ds-track::before{content:'';position:absolute;left:6px;top:.6rem;bottom:.6rem;border-left:2px dashed rgb(28 42 94/.28)}.ds-track li{position:relative;display:grid;gap:.15rem}.ds-track li::before{content:'';position:absolute;left:-1.5rem;top:.35rem;width:14px;height:14px;border-radius:50%;background:#eef4f9;border:2px solid #1c2a5e;box-sizing:border-box}.ds-when{font-weight:700;font-variation-settings:'wdth' 78;letter-spacing:.02em;color:#563a86;font-variant-numeric:tabular-nums}.ds-t{font-weight:650;font-size:1.125rem}.ds-release::before{background:#b3262d!important;border-color:#b3262d!important}.ds-release .ds-when,.ds-release .ds-t{color:#8f1d24}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Inland Letter Card",
+    "overview": "Every surface is a piece of India Post stationery: the pale blue inland letter card is the ground, the type is printed in indigo, the rules and frames are printed in post-office red, and the only other ink is a violet rubber stamp. The landing page is the card's address face, the app is the counter clerk's register, and the recipient's page is the letter itself, opened. Nothing is a screen pretending to be a vault, and nothing is cream sympathy paper.\n\nThree voices carry the type. Anek is the printed card: labels, headings, buttons, numbers, set narrow for headings. Kalam is the person's hand: addresses, salutations, signatures, the margin note, the occasional empty-state line. Martel is the letter being read: long prose, letter bodies, legal text. Printed labels are bilingual where the card would print them (From / प्रेषक, the cut-here legend).\n\nDensity is calm and phone-first. Depth is paper on paper: lighter sheets lifted off the blue ground with soft, ink-tinted shadows, a tiled fractal-noise grain over the whole page, and a few tilted objects (stamps, postmarks, the opened letter, signatures) that make it read as handled rather than rendered.",
+    "keyCharacteristics": [
+      "Inland-letter blue ground with a tiled paper grain; lighter blue sheets for anything you read or write on.",
+      "Indigo for every letter of type, printed or handwritten.",
+      "Post-office red as printed furniture: double frames, double rules, perforations, sheet top borders.",
+      "Violet rubber-stamp ink reserved for postmarks and stamped timeline dates.",
+      "Three type voices with fixed jobs: printed (Anek), hand (Kalam), read (Martel).",
+      "Authored SVG stationery (stamp with marigold, postmark with cancellation waves) instead of icons or illustration."
+    ],
+    "rules": [
+      {
+        "name": "The Ink Discipline Rule",
+        "body": "Indigo for all type, including handwriting. India Post red only for printed rules, frames, perforations, the From legend, the Example tag, price numerals and alarm states. Violet rubber-stamp ink only for postmarks and stamped timeline dates. If a word is red or violet and is not on that list, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Interaction Red Rule",
+        "body": "The focus ring (2px solid red, 3px offset), the input focus halo (3px at 28% red), the caret and the hover colour of link underlines are red. These are the only non-printed uses of red, and they never colour type.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Printed things are Anek, written things are Kalam, read things are Martel. Pick the voice by what the text is on the card, not by how big it is.",
+        "section": "typography"
+      },
+      {
+        "name": "The Narrow Heading Rule",
+        "body": "Anek headings narrow with their importance (wdth 75 for the wordmark, 76–82 for headlines and numerals, 85 for section titles, 92 for buttons, 100 for body). Heading weight is 650–750; never light.",
+        "section": "typography"
+      },
+      {
+        "name": "The Printed-Or-Lifted Rule",
+        "body": "A surface is either printed on the card (red frame, no shadow) or a separate sheet lying on it (lighter blue, soft shadow). Never both.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Top Rule",
+        "body": "No border-radius on any surface that carries a thick accent top border. Letter sheets, the opened example letter and the writing paper (3px red top) stay square-cornered.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do set every word in indigo, including Kalam handwriting.",
+      "Do reserve red for printed rules, frames, perforations, the From legend, the Example tag, price numerals and alarm states, and violet for postmarks and stamped timeline dates.",
+      "Do frame printed regions with the red double frame (1.5px border, 1px outline at 4px offset) and separate page zones with the red double rule.",
+      "Do put readable prose in Martel on a Letter Sheet, max 64ch, line height 1.7–1.8.",
+      "Do keep sheets with a 3px red top border square-cornered.",
+      "Do keep touch targets at 44px or more and honour reduced motion (all animations collapse to 1ms).",
+      "Do print bilingual labels where the card would (English / Hindi), marked with `lang=\"hi\"`."
+    ],
+    "donts": [
+      "Don't colour type red or violet outside the Ink Discipline list, and never colour handwriting anything but indigo.",
+      "Don't round a surface that carries a thick accent top border.",
+      "Don't both frame and lift the same surface.",
+      "Don't use Kalam for buttons, labels or navigation.",
+      "Don't use marigold, leaf or WhatsApp green outside the stamp artwork and the example bubble.",
+      "Don't add a dark \"vault\" theme, shield or lock imagery, or cream sympathy-card paper; the ground is inland-letter blue."
+    ]
+  }
+}
