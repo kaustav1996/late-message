@@ -1,0 +1,569 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--gutter);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  font-size: var(--step-0);
+  font-weight: 550;
+}
+
+.nav > a:not(:global(.btn)) {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav > a:not(:global(.btn)):hover {
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+}
+
+.navHide {
+  display: none !important;
+}
+
+.h2 {
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 700;
+  font-variation-settings: "wdth" 78;
+  letter-spacing: -0.015em;
+  line-height: 1.02;
+  max-width: 18ch;
+}
+
+/* ---- The address face ---- */
+
+.face {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.faceInner {
+  position: relative;
+  display: grid;
+  gap: var(--space-5);
+  padding: var(--space-6) var(--space-4) var(--space-6);
+  border: 1.5px solid var(--red);
+  outline: 1px solid var(--red);
+  outline-offset: 4px;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "postage"
+    "address"
+    "lede"
+    "sender";
+}
+
+.postage {
+  grid-area: postage;
+  position: relative;
+  justify-self: end;
+  width: min(48vw, 230px);
+  height: clamp(118px, 30vw, 150px);
+}
+
+.stamp {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: clamp(78px, 22vw, 116px);
+}
+
+.postmark {
+  position: absolute;
+  right: clamp(46px, 13vw, 70px);
+  top: clamp(42px, 13vw, 70px);
+  width: clamp(160px, 44vw, 220px);
+  mix-blend-mode: multiply;
+}
+
+.address {
+  grid-area: address;
+  position: relative;
+  z-index: 0;
+}
+
+.addressLines {
+  display: grid;
+  font-size: clamp(2.4rem, 7.4vw, 4.4rem);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+
+.to {
+  font-size: 0.6em;
+  line-height: 1.1;
+}
+
+/* Dashed address lines that follow the handwriting however it wraps. */
+.ruled {
+  --lh: 1.3em;
+  position: relative;
+  display: block;
+  line-height: var(--lh);
+}
+
+.ruled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+      to bottom,
+      transparent calc(var(--lh) - 0.2em),
+      var(--ink-line) calc(var(--lh) - 0.2em),
+      var(--ink-line) calc(var(--lh) - 0.2em + 2px),
+      transparent calc(var(--lh) - 0.2em + 2px)
+    )
+    0 0 / 100% var(--lh);
+  mask: linear-gradient(to right, #000 4px, transparent 4px) 0 0 / 9px 100%;
+}
+
+.ruled > span {
+  display: block;
+  padding-left: 0.35em;
+}
+
+.ruled > span + span {
+  padding-left: 0.9em;
+}
+
+.lede {
+  grid-area: lede;
+  max-width: 46ch;
+  font-size: clamp(1.125rem, 1.8vw, 1.3rem);
+  line-height: 1.55;
+}
+
+.sender {
+  grid-area: sender;
+  position: relative;
+  border: 1.5px solid var(--red);
+  padding: var(--space-6) var(--space-4) var(--space-4);
+  max-width: 640px;
+}
+
+.senderLabel {
+  position: absolute;
+  top: -0.85rem;
+  left: var(--space-3);
+  padding: 0 var(--space-2);
+  background: var(--paper);
+  color: var(--red-ink);
+  font-size: var(--step-0);
+  font-weight: 650;
+  font-variation-settings: "wdth" 80;
+}
+
+.senderBody {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-4) var(--space-5);
+}
+
+.senderNote {
+  font-size: var(--step-0);
+  color: var(--ink-soft);
+  max-width: 30ch;
+}
+
+/* The perforation where the address face opens into the letter. */
+.cutLine {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+  color: var(--red-ink);
+  font-size: var(--step--1);
+  font-weight: 600;
+  font-variation-settings: "wdth" 80;
+}
+
+.cutLine::before,
+.cutLine::after {
+  content: "";
+  flex: 1;
+  border-top: 3px dotted var(--red);
+}
+
+/* ---- Inside: how it works ---- */
+
+.inside {
+  max-width: 1240px;
+  margin: var(--space-8) auto 0;
+  padding: 0 var(--gutter);
+}
+
+.insideSheet {
+  display: grid;
+  gap: var(--space-7);
+  padding: var(--space-6) var(--space-4);
+  background-color: var(--paper-lighter);
+  background-image:
+    linear-gradient(to bottom, transparent calc(33.33% - 1px), rgb(28 42 94 / 0.07) calc(33.33% - 1px), rgb(255 255 255 / 0.7) 33.33%, transparent calc(33.33% + 1px)),
+    linear-gradient(to bottom, transparent calc(66.66% - 1px), rgb(28 42 94 / 0.07) calc(66.66% - 1px), rgb(255 255 255 / 0.7) 66.66%, transparent calc(66.66% + 1px));
+  border-radius: 2px;
+  box-shadow:
+    0 1px 2px rgb(28 42 94 / 0.12),
+    0 18px 40px -22px rgb(28 42 94 / 0.45);
+}
+
+.letterCol {
+  display: grid;
+  gap: var(--space-5);
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+.letterText {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 58ch;
+  font-size: var(--step-1);
+  line-height: 1.7;
+}
+
+.letterText em {
+  font-family: var(--font-hand);
+  font-style: normal;
+  font-size: 1.15em;
+}
+
+.margin {
+  color: var(--ink);
+  font-size: var(--step-2);
+  line-height: 1.2;
+  max-width: 16ch;
+  transform: rotate(-3deg);
+}
+
+/* ---- What they receive ---- */
+
+.receive {
+  max-width: 1240px;
+  margin: var(--space-9) auto 0;
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: var(--space-7);
+  align-items: start;
+}
+
+.receiveText {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 44ch;
+}
+
+.receiveText .h2 {
+  margin-bottom: var(--space-2);
+}
+
+.example {
+  position: relative;
+  display: grid;
+  gap: var(--space-4);
+  max-width: 520px;
+  padding-top: var(--space-6);
+}
+
+.exampleTag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.15rem 0.6rem 0.05rem;
+  border: 1px solid var(--red);
+  border-radius: 999px;
+  color: var(--red-ink);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.bubble {
+  position: relative;
+  justify-self: start;
+  max-width: 340px;
+  padding: var(--space-3) var(--space-4) var(--space-5);
+  background: var(--whatsapp);
+  border-radius: 10px 10px 10px 2px;
+  color: #17301c;
+  font-size: var(--step-0);
+  line-height: 1.45;
+  box-shadow: 0 2px 5px -1px rgb(28 42 94 / 0.25);
+}
+
+.bubbleLink {
+  color: #1d5ea8;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  margin-top: var(--space-1);
+  word-break: break-all;
+}
+
+.bubbleTime {
+  position: absolute;
+  right: var(--space-3);
+  bottom: var(--space-2);
+  font-size: 0.75rem;
+  color: #3e5a42;
+}
+
+.opened {
+  justify-self: end;
+  width: min(100% - 12px, 400px);
+  padding: var(--space-5) var(--space-5) var(--space-4);
+  background: var(--paper-lighter);
+  border-top: 3px solid var(--red);
+  transform: rotate(1.4deg);
+  box-shadow:
+    0 1px 2px rgb(28 42 94 / 0.12),
+    0 16px 32px -18px rgb(28 42 94 / 0.5);
+  display: grid;
+  gap: var(--space-3);
+}
+
+.openedSalute {
+  font-size: var(--step-3);
+  line-height: 1;
+}
+
+.openedBody {
+  font-size: var(--step-0);
+  line-height: 1.7;
+}
+
+.openedSign {
+  font-size: var(--step-2);
+  justify-self: end;
+  transform: rotate(-4deg);
+}
+
+/* ---- Price ---- */
+
+.price {
+  max-width: 1240px;
+  margin: var(--space-9) auto 0;
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: var(--space-6);
+}
+
+.priceBody {
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.stamps {
+  display: flex;
+  gap: var(--space-5);
+  align-items: flex-end;
+}
+
+.priceStamp {
+  width: clamp(110px, 30vw, 170px);
+}
+
+.priceList {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 48ch;
+}
+
+.priceList > div {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: baseline;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--ink-hair);
+}
+
+.priceList dt {
+  font-size: var(--step-4);
+  font-weight: 700;
+  font-variation-settings: "wdth" 76;
+  line-height: 1;
+  color: var(--red-ink);
+}
+
+/* ---- Questions ---- */
+
+.questions {
+  max-width: 1240px;
+  margin: var(--space-9) auto 0;
+  padding: 0 var(--gutter);
+  display: grid;
+  gap: var(--space-6);
+}
+
+.qList {
+  max-width: 760px;
+  border-top: 1px solid var(--ink-line);
+}
+
+.q {
+  border-bottom: 1px solid var(--ink-line);
+}
+
+.q summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 56px;
+  padding: var(--space-3) 0;
+  font-weight: 600;
+  font-size: var(--step-1);
+  cursor: pointer;
+  list-style: none;
+}
+
+.q summary::-webkit-details-marker {
+  display: none;
+}
+
+.q summary::after {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  transform: rotate(45deg) translateY(-3px);
+  transition: transform 200ms var(--ease-out);
+}
+
+.q[open] summary::after {
+  transform: rotate(225deg) translateY(-3px);
+}
+
+.q summary:hover {
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+  text-underline-offset: 0.22em;
+}
+
+.q p {
+  padding-bottom: var(--space-5);
+  max-width: 62ch;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ---- Close ---- */
+
+.close {
+  max-width: 1240px;
+  margin: var(--space-9) auto 0;
+  padding: 0 var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5) var(--space-7);
+}
+
+.closeTitle {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  max-width: 14ch;
+}
+
+/* ---- Wider screens ---- */
+
+@media (min-width: 720px) {
+  .navHide {
+    display: inline-flex !important;
+  }
+
+  .faceInner {
+    padding: var(--space-7) var(--space-7) var(--space-6);
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "address postage"
+      "lede lede"
+      "sender sender";
+    column-gap: var(--space-6);
+  }
+
+  .postage {
+    align-self: start;
+    width: 250px;
+    height: 190px;
+  }
+
+  .stamp {
+    width: 124px;
+  }
+
+  .postmark {
+    right: 70px;
+    top: 80px;
+    width: 236px;
+  }
+
+  .sender {
+    padding: var(--space-6) var(--space-6) var(--space-5);
+  }
+
+  .insideSheet {
+    padding: var(--space-7);
+  }
+
+  .letterCol {
+    grid-template-columns: minmax(0, 1fr) 14rem;
+    column-gap: var(--space-7);
+  }
+
+  .letterCol .h2 {
+    grid-column: 1 / -1;
+  }
+
+  .margin {
+    margin-top: var(--space-6);
+  }
+}
+
+@media (min-width: 1000px) {
+  .faceInner {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    grid-template-areas:
+      "address address postage"
+      "lede sender sender";
+    row-gap: var(--space-7);
+    padding: var(--space-8) var(--space-8) var(--space-7);
+  }
+
+  .lede {
+    align-self: end;
+  }
+
+  .sender {
+    align-self: end;
+    justify-self: end;
+  }
+
+  .receive {
+    grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+    gap: var(--space-8);
+  }
+
+  .priceBody {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: var(--space-8);
+  }
+}
